@@ -9,7 +9,7 @@ classifiers = [
 
 setup(
     name='unofficialkeepsolidvpn',
-    version='0.0.1',
+    version='0.0.2',
     description='unofficial keepsolid wireguard fetcher module',
     long_description=open('README.md').read(),
     url='https://github.com/Retch/keepsolid-vpn-wg-fetch',
