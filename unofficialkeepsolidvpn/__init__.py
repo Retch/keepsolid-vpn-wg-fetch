@@ -12,7 +12,6 @@ class Bot:
             chrome_options.add_argument("--headless")
         chrome_options.add_argument('log-level=3')
         self.driver = webdriver.Chrome(options=chrome_options)
-        self.driver.set_window_size(1280, 800)
         self.driver.get("https://my.keepsolid.com/")
 
     def login(self, email, password):
