@@ -12,6 +12,7 @@ class Bot:
             chrome_options.add_argument("--headless")
         chrome_options.add_argument('log-level=3')
         chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.get("https://my.keepsolid.com/")
 
