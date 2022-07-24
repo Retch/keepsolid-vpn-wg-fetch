@@ -3,7 +3,7 @@ import requests
 import json
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
+from selenium.webdriver.common.by import By
 
 class Bot:
     def __init__(self, noheadless=0):
@@ -17,9 +17,9 @@ class Bot:
         self.driver.get("https://my.keepsolid.com/")
 
     def login(self, email, password):
-        self.driver.find_element_by_id("input-25").send_keys(email)
-        self.driver.find_element_by_id("input-26").send_keys(password)
-        self.driver.find_element_by_xpath("/html/body/div[1]/div/div/div/div[1]/div[2]/div/div[2]/div/form/button/div").click()
+        self.driver.find_element(By.CSS_SELECTOR, "input#input-25").send_keys(email)
+        self.driver.find_element(By.CSS_SELECTOR, "input#input-26").send_keys(password)
+        self.driver.find_element(By.CSS_SELECTOR, ".secondary > .x-button--wrap").click()
         global PHPSESSID_COOKIE
         PHPSESSID_COOKIE = self.driver.get_cookie("PHPSESSID")
         while not PHPSESSID_COOKIE:
